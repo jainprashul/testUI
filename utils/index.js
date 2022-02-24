@@ -24,7 +24,7 @@ const validateSignup = (req, res, next) => {
     }
 
     if (Object.keys(errors).length) {
-        res.render('signup', {
+        res.status(200).render('signup', {
             errors,
             ...req.body
         });
