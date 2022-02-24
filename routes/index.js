@@ -5,7 +5,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/signup', (req, res) => {
-    res.json(req.body);
+    res.render('postsignup', {
+        ...req.body
+    });
 });
 
 

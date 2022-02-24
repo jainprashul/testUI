@@ -5,22 +5,35 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Signup
-    body
-        h1 Sign Up
-            div#form
-                form(action="/signup", method="post")
 
-                    label(for="firstname") First Name
+        style 
+            include ./css/index.css
+            include ./css/signup.css
+
+        body
+        div#form
+            h1#title Sign Up
+
+            form#signup(action="/signup", method="post")
+                .name                    
                     input(type="text", name="firstname", required=true, placeholder="First Name")
 
-                    label(for="lastname") Last Name
                     input(type="text", name="lastname", required=true, placeholder="Last Name")
+                    
+                input#email(type="email", name="email", required=true, placeholder="Email")
 
-                    label(for="email") Email
-                    input(type="email", name="email", required=true, placeholder="Email")
+                input#pwd(type="password", name="password", required=true, pattern=`.{8,}`, placeholder="Password", oninvalid="setCustomValidity('Minimum length is 8 characters')", oninput="setCustomValidity('')")
+                
+                input#phone(type="tel", name="phone", pattern='/([0-9]{10}/',maxLength=10, placeholder="Phone Number")
 
-                    label(for="password") Password
-                    input(type="password", name="password", required=true, placeholder="Password")
+                #subscribe
+                    input#subscribe(type="checkbox", name="subscribe", value='true')
+                    label Subscribe to our newsletter
 
-                    label(for)
+                input#submit(type="submit", value="Sign Up")
+
+                #terms
+                    p By signing up, you agree to our 
+                        a(href="#")  Terms, Data Policy and Cookie Policy
+                        |.
 

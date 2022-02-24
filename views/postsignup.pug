@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Signup
+
+        style 
+            include ./css/index.css
+            include ./css/postsignup.css
+
+        body
+            h1 Thank You
+            div#msg
+
+                if subscribe 
+                    p Hello 
+                        = firstname 
+                        | 
+                        = lastname 
+                        |  , Thank you for signing up. Your account is now created and you can log in with your credentials.
+                    p You would be receiving our periodic newsletters to your email:
+                        = email
+                else
+                    p Hello 
+                        = firstname 
+                        | 
+                        = lastname 
+                        |  , Thank you for signing up. Your account is now created and you can log in with your credentials.
+
+                a(href="/") Go back to home page
+
+            
+            
+            
