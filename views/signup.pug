@@ -21,10 +21,16 @@ html(lang="en")
                     input(type="text", name="lastname", required=true, placeholder="Last Name")
                     
                 input#email(type="email", name="email", required=true, placeholder="Email")
+                if errors
+                    p.error #{errors.email}
 
                 input#pwd(type="password", name="password", required=true, pattern=`.{8,}`, placeholder="Password", oninvalid="setCustomValidity('Minimum length is 8 characters')", oninput="setCustomValidity('')")
+                if errors
+                    p.error #{errors.password}
                 
                 input#phone(type="tel", name="phone", pattern='/([0-9]{10}/',maxLength=10, placeholder="Phone Number")
+                if errors
+                    p.error #{errors.phone}
 
                 #subscribe
                     input#subscribe(type="checkbox", name="subscribe", value='true')

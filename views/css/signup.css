@@ -24,6 +24,13 @@
     border-radius: 5px;
 }
 
+#form .error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
 .name {
     display: flex;
 }
