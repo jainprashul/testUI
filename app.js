@@ -10,13 +10,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('hello world');
+    res.render('index');
 });
 
+app.post('/signup', (req, res) => {
+    res.json(req.body);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
 
 
 module.exports = app
